@@ -81,6 +81,7 @@ function passwordGenerator(name) {
     }
 }
 
+
 console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
 console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
 console.log(passwordGenerator('Alexei')); // 'JFXFLb'
