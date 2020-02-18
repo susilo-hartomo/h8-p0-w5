@@ -1,24 +1,31 @@
 function changeVocals(str) {
     //code di sini
-    let kamus = 'abcdefghijklmnopqrstuvwxyz'
-    let kamusBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    let vocal = 'aeiouAEIOU'
+    let setelahVocal = 'bfjpvBFJPV'
+
+    let kamus = 'bcdfghjklmnpqrstvwxyz '
+    let kamusBesar = 'BCDFGHJKLMNPQRSTVWXYZ'
+
     let temp = ''
     for (let i = 0; i < str.length; i++) {
-        for (let j = 0; j < kamus.length; j++) {
-            if (str[i] == kamus[j]) {
-                temp += kamus[j + 1]
-            } else if (str[i] == kamusBesar[j]) {
-                temp += kamusBesar[j + 1]
+        for (let j = 0; j < vocal.length; j++) {
+            if (str[i] == vocal[j]) {
+                temp += setelahVocal[j]
             }
         }
-        if (str[i] == ' ') {
-            temp += ' '
+        for (let k = 0; k < kamus.length; k++) {
+            if (str[i] == kamus[k]) {
+                temp += kamus[k]
+            } else if(str[i] == kamusBesar[k]) {
+                temp += kamusBesar[k]
+            }
+
         }
     }
     return temp
 }
 
-// console.log('changeVocals: ', changeVocals('Aku Suka'));
+console.log('changeVocals: ', changeVocals('Aku Suka'));
 
 function reverseWord(str) {
     //code di sini
