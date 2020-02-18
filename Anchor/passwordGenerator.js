@@ -1,22 +1,24 @@
 function changeVocals(str) {
     //code di sini
     let kamus = 'abcdefghijklmnopqrstuvwxyz'
+    let kamusBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     let temp = ''
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < kamus.length; j++) {
             if (str[i] == kamus[j]) {
                 temp += kamus[j + 1]
-            } else if ((str[i] == kamus[j].toUpperCase())) {
-                temp += kamus[j + 1].toUpperCase()
-            } else if (str[i] == ' ') {
-                temp += ' '
+            } else if (str[i] == kamusBesar[j]) {
+                temp += kamusBesar[j + 1]
             }
+        }
+        if (str[i] == ' ') {
+            temp += ' '
         }
     }
     return temp
 }
 
-console.log('changeVocals: ', changeVocals('Aku Suka'));
+// console.log('changeVocals: ', changeVocals('Aku Suka'));
 
 function reverseWord(str) {
     //code di sini
@@ -27,23 +29,31 @@ function reverseWord(str) {
     return temp
 }
 
-console.log('reverseWord(str): ', reverseWord('str'));
+// console.log('reverseWord(str): ', reverseWord('str'));
 
 function setLowerUpperCase(str) {
     //code di sini
+    let kamus = 'abcdefghijklmnopqrstuvwxyz'
+    let kamusBesar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
     let temp = ''
     for (let i = 0; i < str.length; i++) {
         // console.log('str: ',i, str[i]);
-        if (str[i] === str[i].toUpperCase()) {
-            temp += str[i].toLowerCase()
-        } else if (str[i] === str[i].toLowerCase()) {
-            temp += str[i].toUpperCase()
+        for (let j = 0; j < kamus.length; j++) {
+            if (str[i] === kamus[j]) {
+                temp += kamusBesar[j]
+            } else if (str[i] === kamusBesar[j]) {
+                temp += kamus[j]
+            }
+        }
+        if (str[i] == ' ') {
+            temp += ' '
         }
     }
     return temp
 }
 
-console.log('setLowerUpperCase: ', setLowerUpperCase('Aku SuKA'));
+// console.log('setLowerUpperCase: ', setLowerUpperCase('Aku SuKA'));
 
 function removeSpaces(str) {
     //code di sini
@@ -55,7 +65,7 @@ function removeSpaces(str) {
     }
     return temp
 }
-console.log('removeSpaces: ', removeSpaces('a k u'));
+// console.log('removeSpaces: ', removeSpaces('a k u'));
 
 function passwordGenerator(name) {
     //code di sini
@@ -63,7 +73,7 @@ function passwordGenerator(name) {
     name = reverseWord(name)
     name = setLowerUpperCase(name)
     name = removeSpaces(name)
-    
+
     if (name.length < 5) {
         return 'Minimal karakter yang diinputkan adalah 5 karakter'
     } else {
