@@ -1,4 +1,5 @@
 function nameHero(arr) {
+    //MEMISAHKAN DANTA KOMA
     let hasil = []
     let temp = ''
     for (let i = 0; i < arr.length; i++) {
@@ -15,6 +16,7 @@ function nameHero(arr) {
 
 
 function nameJenisHero(arr) {
+    //MEMISAHKAN NAMA HERO DAN JENIS HERO DENGAN TNDA -
     let hasil = []
     for (let i = 0; i < arr.length; i++) {
         let namaHero = []

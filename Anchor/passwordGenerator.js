@@ -1,31 +1,53 @@
+// function changeVocals(str) {
+//     //code di sini
+//     let vocal = 'aeiouAEIOU'
+//     let setelahVocal = 'bfjpvBFJPV'
+
+//     let kamus = 'bcdfghjklmnpqrstvwxyz '
+//     let kamusBesar = 'BCDFGHJKLMNPQRSTVWXYZ'
+
+//     let temp = ''
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = 0; j < vocal.length; j++) {
+//             if (str[i] == vocal[j]) {
+//                 temp += setelahVocal[j]
+//             }
+//         }
+//         for (let k = 0; k < kamus.length; k++) {
+//             if (str[i] == kamus[k]) {
+//                 temp += kamus[k]
+//             } else if(str[i] == kamusBesar[k]) {
+//                 temp += kamusBesar[k]
+//             }
+
+//         }
+//     }
+//     return temp
+// }
+
+// console.log('changeVocals: ', changeVocals('Aku Suka'));
+
 function changeVocals(str) {
     //code di sini
-    let vocal = 'aeiouAEIOU'
-    let setelahVocal = 'bfjpvBFJPV'
-
-    let kamus = 'bcdfghjklmnpqrstvwxyz '
-    let kamusBesar = 'BCDFGHJKLMNPQRSTVWXYZ'
-
+    
+    let kamus = 'aiueoAIUEO'
+    let kamusB = 'bjvfpBJVFP'
+    
     let temp = ''
     for (let i = 0; i < str.length; i++) {
-        for (let j = 0; j < vocal.length; j++) {
-            if (str[i] == vocal[j]) {
-                temp += setelahVocal[j]
-            }
-        }
+        check = 1
         for (let k = 0; k < kamus.length; k++) {
             if (str[i] == kamus[k]) {
-                temp += kamus[k]
-            } else if(str[i] == kamusBesar[k]) {
-                temp += kamusBesar[k]
+                temp += kamusB[k]
+                check = 0
             }
-
+        }
+        if (check == 1) {
+            temp += str[i]
         }
     }
     return temp
 }
-
-console.log('changeVocals: ', changeVocals('Aku Suka'));
 
 function reverseWord(str) {
     //code di sini
