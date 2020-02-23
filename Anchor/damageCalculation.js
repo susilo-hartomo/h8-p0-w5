@@ -1,7 +1,6 @@
 function attack(damage) {
     // Code disini
-    damage = damage -2
-    return damage
+    return damage -2
 }
 
 function damageCalculation(numberOfAttacks, damagePerAttack) {
